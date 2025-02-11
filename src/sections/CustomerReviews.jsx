@@ -1,35 +1,42 @@
 import React from 'react';
 
+// Import images
+import customer1 from '../assets/customer/customer1.jpg';
+import customer2 from '../assets/customer/customer2.jpg';
+import customer3 from '../assets/customer/customer3.jpg';
+import customer4 from '../assets/customer/customer4.jpg';
+import customer5 from '../assets/customer/customer5.jpg';
+
 const customerReviews = [
   {
-    image: '/path/to/customer1.jpg',
-    name: 'Ariella Dorsey',
+    image: customer1,
+    name: 'John Doe',
     rating: 5,
     review: 'Great product! Highly recommend.',
   },
   {
-    image: '/path/to/customer2.jpg',
-    name: 'Brock Christensen',
+    image: customer2,
+    name: 'Jane Smith',
     rating: 4,
-    review: 'Good quality, but a bit expensive.',
+    review: 'Very comfortable and stylish.',
   },
   {
-    image: '/path/to/customer3.jpg',
-    name: 'Isaac Whitaker',
+    image: customer3,
+    name: 'Sam Wilson',
     rating: 5,
-    review: 'Excellent service and fast delivery.',
+    review: 'Excellent quality and fast shipping.',
   },
   {
-    image: '/path/to/customer4.jpg',
-    name: 'Lila Thompson',
+    image: customer4, 
+    name: 'Adejumo Adedayo',
+    rating: 5,
+    review: 'I love the product. It fits perfectly.',
+  },
+  {
+    image: customer5,
+    name: 'Alice Johnson',
     rating: 4,
-    review: 'Very comfortable and stylish shoes.',
-  },
-  {
-    image: '/path/to/customer5.jpg',
-    name: 'Ethan Brown',
-    rating: 5,
-    review: 'Amazing quality and great customer support.',
+    review: 'Great customer service!',
   },
 ];
 
@@ -46,17 +53,26 @@ const CustomerReviews = () => {
       </div>
       <div className="grid gap-14 mt-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 max-sm:mt-8">
         {customerReviews.map((review, index) => (
-          <div key={index} className="flex flex-col items-center p-4 border-2 border-gray-200 rounded-3xl transition-all duration-300 ease-in-out hover:shadow-lg hover:border-coral-red">
-            <img src={review.image} alt={review.name} className="w-16 h-16 rounded-full mb-4" />
-            <h3 className="font-montserrat text-xl font-semibold">{review.name}</h3>
+          <div
+            key={index}
+            className="flex flex-col items-center p-4 border-2 border-gray-200 rounded-3xl transition-all duration-300 ease-in-out hover:shadow-lg hover:border-coral-red"
+          >
+            <img
+              src={review.image}
+              alt={review.name}
+              className="w-16 h-16 rounded-full mb-4"
+            />
+            <h3 className="font-montserrat text-xl font-semibold">
+              {review.name}
+            </h3>
             <div className="flex items-center mt-2">
               {[...Array(review.rating)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.15c.969 0 1.371 1.24.588 1.81l-3.357 2.44a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.54 1.118l-3.357-2.44a1 1 0 00-1.175 0l-3.357 2.44c-.784.57-1.838-.197-1.54-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.465 9.384c-.783-.57-.38-1.81.588-1.81h4.15a1 1 0 00.95-.69l1.286-3.957z" />
-                </svg>
+                <span key={i} className="text-yellow-500">★</span>
               ))}
             </div>
-            <p className="text-center text-slate-grey font-montserrat mt-4">{review.review}</p>
+            <p className="text-slate-grey font-montserrat mt-2">
+              {review.review}
+            </p>
           </div>
         ))}
       </div>
