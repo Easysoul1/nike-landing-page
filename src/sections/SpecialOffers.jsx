@@ -37,7 +37,7 @@ const specialOffers = [
 ];
 
 const CustomArrow = ({ className, style, onClick, children }) => (
-  <div
+  <div id='about-us'
     className={`absolute top-1/2 -translate-y-1/2 z-10 cursor-pointer ${className}`}
     style={{ ...style }}
     onClick={onClick}
