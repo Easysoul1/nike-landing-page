@@ -19,7 +19,7 @@ const Nav = () => {
         <ul className={`flex-1 flex justify-center items-center gap-16 max-lg:hidden ${isMenuOpen ? 'block' : 'hidden'} lg:flex`}>
           {navLinks.map((item) => (
             <li key={item.label}>
-              <a href={item.href} className='font-monserrat leading-normal text-lg text-slate-grey'>
+              <a href={item.href} className='font-monserrat leading-normal text-lg text-slate-grey '>
                 {item.label}
               </a>
             </li>
@@ -32,8 +32,8 @@ const Nav = () => {
       {isMenuOpen && (
         <ul className="flex flex-col items-center gap-4 mt-4 lg:hidden">
           {navLinks.map((item) => (
-            <li key={item.label}>
-              <a href={item.href} className='font-monserrat leading-normal text-lg text-slate-grey'>
+            <li key={item.label} className="w-full text-center ml-80 hover:text-coral-red">
+              <a href={item.href} className='font-monserrat leading-normal text-lg text-slate-grey block py-2'>
                 {item.label}
               </a>
             </li>
